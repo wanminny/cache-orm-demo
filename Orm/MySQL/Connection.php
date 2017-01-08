@@ -3,13 +3,8 @@
 
 namespace Orm\MySQL;
 
-//use Hood\Core\Server;
-
 use \Closure;
 
-//use Hood\Cache as hoodCache;
-
-use Orm\Cache  as hoodCache;
 /**
  * 适配器
  * Class Connection

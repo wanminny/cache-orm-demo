@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Zip
- * Date: 14/12/7
- * Time: 上午12:11
- */
 
 namespace Orm\MySQL;
 
 use Orm\MySQL\DebugException;
-//use Hood\Debug\DebugException;
+
 
 class Server extends Root
 {

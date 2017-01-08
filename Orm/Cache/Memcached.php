@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Zip
- * Date: 14/11/23
- * Time: 上午1:39
- */
 
 namespace Orm\Cache;
 

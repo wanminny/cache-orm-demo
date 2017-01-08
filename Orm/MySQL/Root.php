@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Zip
- * Date: 14/12/7
- * Time: 上午12:45
- */
 
 namespace Orm\MySQL;
 

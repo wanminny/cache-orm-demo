@@ -1,15 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Zip
- * Date: 14/12/15
- * Time: 上午9:55
- */
 
 namespace Orm\MySQL;
-
-//use Hood\Cache as hoodCache;
-//use Orm\Cache  as hoodCache;
 
 class Quick extends Connection
 {
@@ -233,14 +224,12 @@ class Quick extends Connection
 
     /**
      * db cache 对象
-     * @return \Orm\Cache\CacheInterface
+     * @return \Orm\Cache\DbCacheRedis
      */
     private function dbCache()
     {
         $cacheDriveName = $this->_cacheDrive['drive'];
-//        var_dump($cacheDriveName);die;
         $cls = "\\Orm\\Cache\\".$cacheDriveName;
-//        var_dump($cls);die;
         return new $cls($this->_cacheDrive['node'], $this->_cacheDrive['child_node']);
     }
 
