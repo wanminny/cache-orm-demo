@@ -76,7 +76,7 @@ class TestModel extends ModelsDao
 
         /// 要替换的字符串  #replace#
         $columns['columns'] = static::compileUpdateColumns($columnsArr);
-        /// 变量绑定 :status 
+        /// 变量绑定 :status
         $columnsArr['status'] = 1;
 
 

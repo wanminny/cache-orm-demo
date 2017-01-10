@@ -44,6 +44,7 @@ class Root
 
     public function __construct()
     {
+        /// 开发;测试;生产环境!
         defined('APPLICATION_ENV') || define('APPLICATION_ENV', 'developer');
         defined('APPLICATION_SYSTEM_CONFIG') || define('APPLICATION_SYSTEM_CONFIG',APP_PATH."/Config");
     }
