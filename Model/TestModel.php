@@ -27,6 +27,9 @@ class TestModel extends ModelsDao
         $key = self::$_key_system.'fix.app_info_';
         $data =  $this->dao()->tag(self::$_tag_system)->key($key)
             ->expire(self::EXPIRE)->fetchAll(Demo::SELECTALL);
+        var_dump($this->dao()->tag(self::$_tag_system)->key($key)
+            ->expire(self::EXPIRE)->getSQL(Demo::SELECTALL));
+
         return $data;
     }
 }

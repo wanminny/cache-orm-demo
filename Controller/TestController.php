@@ -14,6 +14,7 @@ class TestController
     {
         $model = new TestModel();
         $data = $model->getData();
-        var_dump($data);
+        return $data;
+//        var_dump($data);
     }
 }

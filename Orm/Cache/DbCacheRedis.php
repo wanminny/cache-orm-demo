@@ -5,10 +5,8 @@ namespace Orm\Cache;
 use Orm\MySQL\Root;
 use Orm\Cache\CacheInterface;
 use Orm\MySQL\DebugException;
-
-//use Hood\Core\Root;
-//use Hood\Debug\DebugException;
 use \Redis;
+
 class DbCacheRedis extends Root implements CacheInterface
 {
 	private $instances = array();

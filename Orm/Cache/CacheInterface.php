@@ -1,8 +1,6 @@
 <?php
 
 
-//namespace Orm\Cache;
-
 namespace Orm\Cache;
 
 interface CacheInterface
@@ -20,4 +18,4 @@ interface CacheInterface
     public function delete($key);
 
     public function tag($tagName);
-} 
+}

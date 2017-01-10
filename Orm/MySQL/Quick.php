@@ -52,7 +52,7 @@ class Quick extends Connection
             }
         }
         $cacheData = parent::$fun($sql, $parameterMap, $replaceMap);
-        
+//        var_dump($cacheData);
         if ($this->_cacheStatus === true) {
             if (!empty($this->_cacheTagName)) {
                 $this->dbCache()->tag($this->_cacheTagName)->set($this->_cacheKey, $cacheData, $this->_cacheExpire);

@@ -25,8 +25,6 @@ abstract class ModelsDao
     	if(!empty($this->dbDriver)) return $this->dbDriver;
         $_database = empty($database) ? $this->database : $database;
 
-        //添加缓存开关判断
-        //return DB::Quick($_database);
         if (empty(self::$dao[$_database])){
 //            $_appConfig = Registry::get('appConfig');
             $switch = $this->cacheSwitch;

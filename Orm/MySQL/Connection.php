@@ -23,7 +23,8 @@ class Connection extends Root
      * @var string
      */
     protected $_cacheDrive = array(
-        'drive' => 'DbCacheRedis',//'Memcached',
+//        'drive' => 'DbCacheRedis',//'Memcached',
+        'drive' => 'Memcached',//'Memcached',
         'node' => null,
         'child_node' => 'hosts'
     );

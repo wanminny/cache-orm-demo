@@ -2,9 +2,9 @@
 
 namespace Orm\Cache;
 
-//use Hood\Core\Root;
 use Orm\MySQL\Root;
-//use Hood\Debug\DebugException;
+use Orm\MySQL\DebugException;
+
 
 class Memcached extends Root implements CacheInterface
 {
@@ -69,7 +69,6 @@ class Memcached extends Root implements CacheInterface
     /**
      * @param $persistentID
      * @return \Memcached
-     * @throws \Hood\Debug\DebugException
      */
     private function init()
     {
