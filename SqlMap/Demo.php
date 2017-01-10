@@ -11,11 +11,16 @@ namespace SqlMap;
 
 class Demo
 {
+    //select
     const SELECTALL = "select * from cloud_domain";
 
-    const CHECKAPPVALID = "SELECT COUNT(*) FROM app_info WHERE app_id = :app_id AND state = 1";
+    const CHECKAPPVALID = "SELECT COUNT(*) FROM cloud_domain WHERE id = :id AND status = 1";
 
-    const INSERTAPPINFO = "INSERT INTO app_info(#columns#) VALUES (#values#)";
+    //insert
+    const INSERTAPPINFO = "INSERT INTO cloud_domain(#columns#) VALUES (#values#)";
+
+    //update
+    const UPDATEAPPINFO = "UPDATE cloud_domain SET #columns# WHERE status = :status";
 
 }
 

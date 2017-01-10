@@ -8,7 +8,6 @@ use \Closure;
 /**
  * 适配器
  * Class Connection
- * @package Hood\Dao\Db\MySQL
  */
 class Connection extends Root
 {
@@ -283,6 +282,7 @@ class Connection extends Root
     protected function _statement($sql, $parameterMap, $replaceMap)
     {
         $sql = $this->makeReplaceMapToSql($sql, $replaceMap);
+//        var_dump($sql);
         $this->_PDOConn = $conn = $this->connect();
         $this->_PDOStatement = $stmt = $conn->prepare($sql);
         $this->bindValues($parameterMap, $stmt);

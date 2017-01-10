@@ -5,7 +5,6 @@ namespace Orm\MySQL;
 /**
  * 结果
  * Class Result
- * @package Hood\Dao\Db\MySQL
  */
 class Result
 {

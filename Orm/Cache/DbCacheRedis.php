@@ -3,7 +3,6 @@
 
 namespace Orm\Cache;
 use Orm\MySQL\Root;
-use Orm\Cache\CacheInterface;
 use Orm\MySQL\DebugException;
 use \Redis;
 
