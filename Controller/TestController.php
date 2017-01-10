@@ -6,7 +6,7 @@
  * Time: 下午4:54
  */
 namespace Controller;
-use Model\TestModel;
+use Model\Facade\Test\TestModel;
 
 class TestController
 {
@@ -15,6 +15,5 @@ class TestController
         $model = new TestModel();
         $data = $model->getData();
         return $data;
-//        var_dump($data);
     }
 }

@@ -6,8 +6,7 @@
  * Time: 上午10:49
  */
 
-namespace SqlMap;
-
+namespace Model\SqlMap\Test;
 
 class Demo
 {

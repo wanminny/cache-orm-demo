@@ -14,6 +14,7 @@ abstract class ModelsDao
     protected $dbDriver = '';
     protected static $dao = array();
 
+    ///可以在参数中进行配置;
     protected $cacheSwitch = 1;
 
     /**
@@ -26,7 +27,6 @@ abstract class ModelsDao
         $_database = empty($database) ? $this->database : $database;
 
         if (empty(self::$dao[$_database])){
-//            $_appConfig = Registry::get('appConfig');
             $switch = $this->cacheSwitch;
             if (empty($switch)){
                 self::$dao[$_database] = DB::Connection($_database);

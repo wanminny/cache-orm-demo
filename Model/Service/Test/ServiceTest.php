@@ -2,15 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: wanmin
- * Date: 17/1/8
- * Time: 下午4:55
+ * Date: 17/1/10
+ * Time: 下午5:20
  */
+namespace Model\Service\Test;
+
+use Model\ModelsDao;
+use Model\SqlMap\Test\Demo;
 
 
-namespace Model;
-use SqlMap\Demo;
-
-class TestModel extends ModelsDao
+class ServiceTest extends ModelsDao
 {
 
     public static $_key_system = "key";
@@ -22,9 +23,8 @@ class TestModel extends ModelsDao
         $this->database = 'ship2pv5';
     }
 
-    public  function getData()
+    public function getData()
     {
-
         //select
         $key = self::$_key_system.'fix.app_info_';
         $data =  $this->dao()->tag(self::$_tag_system)->key($key)
