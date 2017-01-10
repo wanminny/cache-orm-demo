@@ -13,8 +13,7 @@ Autoloader::loader();
 define("APP_PATH",dirname(__FILE__));
 
 $c = new \Controller\TestController();
-for($i = 0;$i<1000;$i++) {
+for($i = 0;$i<10;$i++) {
     $data = $c->orm();
 }
-//var_dump($data);
 

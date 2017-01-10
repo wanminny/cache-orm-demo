@@ -8,6 +8,7 @@
 
 
 namespace Model;
+use SqlMap\Demo;
 
 class TestModel extends ModelsDao
 {
@@ -25,10 +26,7 @@ class TestModel extends ModelsDao
     {
         $key = self::$_key_system.'fix.app_info_';
         $data =  $this->dao()->tag(self::$_tag_system)->key($key)
-            ->expire(self::EXPIRE)->fetchAll("select * from cloud_domain");
-//        $data = $this->dao()->tag();
-
+            ->expire(self::EXPIRE)->fetchAll(Demo::SELECTALL);
         return $data;
-//        var_dump($data);
     }
 }
