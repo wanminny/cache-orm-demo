@@ -2,7 +2,7 @@
 
 ### 项目的gh-pages
 
-https://wanminny.github.io/cache-orm-demo/
+https://wanminny.github.io/cache-orm-demo/index.html
 
 
 ### ORM demo
