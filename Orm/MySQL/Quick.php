@@ -11,6 +11,7 @@ class Quick extends Connection
      * @param array $replaceMap
      * @param $fun
      * @return Result
+     * @comments 写操作需要更新缓存 读操作不需要
      */
     private function _execute($sql, $parameterMap = array(), $replaceMap = array())
     {
@@ -37,12 +38,20 @@ class Quick extends Connection
     private function quicken($sql, $parameterMap = array(), $replaceMap = array(), $fun)
     {
 
+//        var_dump($this->_cacheStatus );
         if ($this->_cacheStatus === true) {
+//            var_dump($this->_cacheKey);die;
             if (empty($this->_cacheKey)) {
+                ///如果没有设置key 则人为的设置key
                 $this->_cacheKey = md5($this->getSQL($sql, $parameterMap, $replaceMap));
+                var_dump( $this->_cacheKey);
+//                die;
             }
+            var_dump($this->_cacheStatus, $this->_cacheKey,($this->_cacheTagName));
             if (!empty($this->_cacheTagName)) {
+                //第二次查找就有数据了;
                 $cacheData = $this->dbCache()->tag($this->_cacheTagName)->get($this->_cacheKey);
+                var_dump($cacheData);die;
             } else {
                 $cacheData = $this->dbCache()->get($this->_cacheKey);
             }
@@ -54,8 +63,11 @@ class Quick extends Connection
         $cacheData = parent::$fun($sql, $parameterMap, $replaceMap);
 //        var_dump($cacheData);
         if ($this->_cacheStatus === true) {
+            //有Tag的时候  注意,tag只是为了区分KEY的复杂度;因为是为了生成更加复杂的KEY而存在的!
             if (!empty($this->_cacheTagName)) {
+                var_dump($this->_cacheKey);
                 $this->dbCache()->tag($this->_cacheTagName)->set($this->_cacheKey, $cacheData, $this->_cacheExpire);
+                die;
             } else {
                 $this->dbCache()->set($this->_cacheKey, $cacheData, $this->_cacheExpire);
             }
@@ -98,6 +110,8 @@ class Quick extends Connection
      */
     public function fetchAll($sql, $parameterMap = array(), $replaceMap = array())
     {
+        ///缓存查询入口
+//        echo 456;die;
         return $this->quicken($sql, $parameterMap, $replaceMap, __FUNCTION__);
     }
 

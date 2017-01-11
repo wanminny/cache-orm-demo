@@ -26,6 +26,8 @@ class Root
     /**
      * 缓存
      * @var bool
+     * 该开关如果为FALSE相当于直接走父类connection!
+     * 也就是说DB::Connection分支可以省略了
      */
     protected $_cacheStatus = true;
 
@@ -33,12 +35,14 @@ class Root
      * 缓存key
      * @var null
      */
+//    protected $_cacheKey = null;
     protected $_cacheKey = null;
 
     /**
      * 缓存tagName
      * @var string
      */
+//    protected $_cacheTagName = '';
     protected $_cacheTagName = '';
 
 

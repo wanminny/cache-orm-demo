@@ -14,9 +14,9 @@ use Model\SqlMap\Test\Demo;
 class ServiceTest extends ModelsDao
 {
 
-    public static $_key_system = "key";
+    public static $_key_system = "";
     public static $_tag_system = 'tag';
-    const  EXPIRE = 800;
+    const  EXPIRE = 1000;
 
     public function __construct()
     {
@@ -26,14 +26,14 @@ class ServiceTest extends ModelsDao
     public function getData()
     {
         //select
-        $key = self::$_key_system.'fix.app_info_';
+        $key = self::$_key_system;
         $data =  $this->dao()->tag(self::$_tag_system)->key($key)
             ->expire(self::EXPIRE)->fetchAll(Demo::SELECTALL);
 
         var_dump($this->dao()->tag(self::$_tag_system)->key($key)
             ->expire(self::EXPIRE)->getSQL(Demo::SELECTALL));
-
-
+        var_dump($data);
+        die;
         //select parameter.
         $id = 1;
         $data1 =  $this->dao()->tag(self::$_tag_system)->key($key)

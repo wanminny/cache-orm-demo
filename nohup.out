@@ -4,3 +4,6 @@
 31706:C 10 Jan 12:40:21.617 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
 31706:M 10 Jan 12:40:21.619 * Increased maximum number of open files to 10032 (it was originally set to 2560).
 31706:M 10 Jan 12:40:21.620 # Creating Server TCP listening socket *:6379: bind: Address already in use
+41506:C 11 Jan 12:39:34.698 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+41506:M 11 Jan 12:39:34.702 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+41506:M 11 Jan 12:39:34.703 # Creating Server TCP listening socket *:6379: bind: Address already in use

@@ -22,8 +22,8 @@ class Connection extends Root
      * @var string
      */
     protected $_cacheDrive = array(
-//        'drive' => 'DbCacheRedis',//'Memcached',
-        'drive' => 'Memcached',//'Memcached',
+        'drive' => 'DbCacheRedis',//'Memcached',
+//        'drive' => 'Memcached',//'Memcached',
         'node' => null,
         'child_node' => 'hosts'
     );
@@ -457,6 +457,9 @@ class Connection extends Root
      */
     public function fetchAll($sql, $parameterMap = array(), $replaceMap = array())
     {
+        /// connect 非缓存方式入口
+
+        echo "eeeeentry";
         return $this->_statement($sql, $parameterMap, $replaceMap)->fetchAll(\PDO::FETCH_ASSOC);
     }
 

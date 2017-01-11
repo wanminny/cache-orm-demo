@@ -15,7 +15,8 @@ abstract class ModelsDao
     protected static $dao = array();
 
     ///可以在参数中进行配置;
-    protected $cacheSwitch = 1;
+//    protected $cacheSwitch = 0;  //是否走快速 0 不走 1 走缓存
+    protected $cacheSwitch = 1;  //是否走快速
 
     /**
      * @param string $database
